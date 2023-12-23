@@ -3,6 +3,7 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { UserListComponent } from './user-list.component';
 import { UserService } from '../user.service';
 import { of } from 'rxjs';
+import { By } from '@angular/platform-browser';
 
 describe('UserListComponent', () => {
   let component: UserListComponent;
@@ -35,6 +36,17 @@ describe('UserListComponent', () => {
   
   it('should retrieve users from the UserService on init', () => {
     fixture.detectChanges();
+    expect(userServiceSpy).toHaveBeenCalled();
+  })
+
+  it('should retrieve users from the UserService when the refresh botton is clicked', () => {
+    fixture.detectChanges();
+
+    userServiceSpy.calls.reset();
+
+    const button = fixture.debugElement.query(By.css('button'));
+    button.triggerEventHandler('click', null);
+
     expect(userServiceSpy).toHaveBeenCalled();
   })
 });
