@@ -13,7 +13,7 @@ export class UserService {
 
   constructor() { }
 
-  getUser(){
+  getUsers(){
     return of(this.users)
   }
 }
