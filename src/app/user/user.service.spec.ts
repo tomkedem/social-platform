@@ -16,7 +16,7 @@ describe('UserService', () => {
   });
 
   it('should get users',() => {
-    service.getUser().subscribe(users => {
+    service.getUsers().subscribe(users => {
       expect(users.length).toBeGreaterThan(0);
     })
   });
