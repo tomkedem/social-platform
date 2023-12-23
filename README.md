@@ -29,4 +29,4 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 # ng test 
 # ng g s user/user
 # ng test --watch=false
-
+# ng g c user/user-list
